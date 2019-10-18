@@ -12,5 +12,4 @@ public class CurrencyExchangeServiceApplicationTests {
     @Test
     public void contextLoads() {
     }
-
 }

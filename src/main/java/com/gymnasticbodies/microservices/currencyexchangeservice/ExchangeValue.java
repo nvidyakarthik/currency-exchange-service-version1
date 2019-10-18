@@ -1,20 +1,25 @@
 package com.gymnasticbodies.microservices.currencyexchangeservice;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
 @NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
+@Entity
 public class ExchangeValue {
-    private long id;
-    private String from;
-    private  String to;
-    private BigDecimal conversionMultiple;
+    @Id
+    @NonNull private long id;
+    @Column(name = "currency_from")
+    @NonNull private String from;
+    @Column(name = "currency_to")
+    @NonNull private  String to;
+    @NonNull private BigDecimal conversionMultiple;
+    private int port;
 
 }
